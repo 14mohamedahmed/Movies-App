@@ -14,9 +14,9 @@ class ApiFaliureModel extends Equatable {
   // this format is provided from API documentation and can be changed
   factory ApiFaliureModel.fromJson(Map<String, dynamic> json) =>
       ApiFaliureModel(
-        success: json["success"],
-        statusCode: json["status_code"],
-        statusMessage: json["status_message"],
+        success: json["success"] ?? false,
+        statusCode: json["status_code"] ?? 0,
+        statusMessage: json["status_message"] ?? "",
       );
 
   @override

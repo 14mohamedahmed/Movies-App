@@ -33,7 +33,7 @@ class DioApiServiceImpl extends ApiService {
         data: response.data,
       ));
     } on DioException catch (error) {
-      return Left(ApiFaliureModel.fromJson(error.response!.data));
+      return Left(ApiFaliureModel.fromJson(error.response?.data ?? {}));
     }
   }
 }
