@@ -4,4 +4,5 @@ class ApiConstants {
   static const String authToken =
       "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZDY5MGJlMDc1NjczNWU0YjFmNTliNWUwYTFlYzEyZiIsInN1YiI6IjYzZjllZmYzMjVhNTM2MDA4NzRjZTBlYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zkQ2E6ImGOywxOCzETC9d2xzAshz_v6p-o1ZxDKqid4";
   static const String popularMovies = "/movie/popular";
+  static const String configuration = "/configuration";
 }

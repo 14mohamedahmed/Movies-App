@@ -1,24 +1,35 @@
 part of 'popular_movies_bloc.dart';
 
 class PopularMoviesState extends Equatable {
-  final RequestStatus status;
+  final RequestStatus popularMoviesStatus, configsStatus;
   final List<Movie> popularMovies;
-  final String popularMoviesFaliureMessage;
+  final ImageConfigs? imageConfigs;
+  final String popularMoviesFaliureMessage, configsFaliureMessage;
 
   const PopularMoviesState({
-    this.status = RequestStatus.initial,
+    this.popularMoviesStatus = RequestStatus.initial,
+    this.configsStatus = RequestStatus.initial,
     this.popularMovies = const [],
+    this.imageConfigs,
     this.popularMoviesFaliureMessage = "",
+    this.configsFaliureMessage = "",
   });
 
   PopularMoviesState copyWith({
-    RequestStatus? status,
+    RequestStatus? popularMoviesStatus,
+    configsStatus,
     List<Movie>? popularMovies,
+    ImageConfigs? imageConfigs,
     String? popularMoviesFaliureMessage,
+    configsFaliureMessage,
   }) {
     return PopularMoviesState(
       popularMovies: popularMovies ?? this.popularMovies,
-      status: status ?? this.status,
+      configsFaliureMessage:
+          configsFaliureMessage ?? this.configsFaliureMessage,
+      configsStatus: configsStatus ?? this.configsStatus,
+      imageConfigs: imageConfigs ?? this.imageConfigs,
+      popularMoviesStatus: popularMoviesStatus ?? this.popularMoviesStatus,
       popularMoviesFaliureMessage:
           popularMoviesFaliureMessage ?? this.popularMoviesFaliureMessage,
     );
@@ -26,5 +37,5 @@ class PopularMoviesState extends Equatable {
 
   @override
   List<Object> get props =>
-      [status, popularMovies, popularMoviesFaliureMessage];
+      [popularMoviesStatus, popularMovies, popularMoviesFaliureMessage];
 }

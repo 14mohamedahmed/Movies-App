@@ -8,3 +8,5 @@ sealed class PopularMoviesEvent extends Equatable {
 }
 
 class GetPopularMoviesEvent extends PopularMoviesEvent {}
+
+class GetConfigurationEvent extends PopularMoviesEvent {}

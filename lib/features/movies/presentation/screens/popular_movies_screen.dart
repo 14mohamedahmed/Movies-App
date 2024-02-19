@@ -11,8 +11,9 @@ class PopularMoviesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          getIt<PopularMoviesBloc>()..add(GetPopularMoviesEvent()),
+      create: (context) => getIt<PopularMoviesBloc>()
+        ..add(GetConfigurationEvent())
+        ..add(GetPopularMoviesEvent()),
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Popular Movies"),
@@ -20,10 +21,11 @@ class PopularMoviesScreen extends StatelessWidget {
         ),
         body: BlocBuilder<PopularMoviesBloc, PopularMoviesState>(
             builder: (context, state) {
-          return switch (state.status) {
+          return switch (state.popularMoviesStatus) {
             RequestStatus.initial =>
               const Center(child: CircularProgressIndicator.adaptive()),
-            RequestStatus.success => PopularMoviesList(state.popularMovies),
+            RequestStatus.success =>
+              PopularMoviesList(state.popularMovies, state.imageConfigs),
             RequestStatus.failure => Center(
                 child: Text(state.popularMoviesFaliureMessage),
               ),
