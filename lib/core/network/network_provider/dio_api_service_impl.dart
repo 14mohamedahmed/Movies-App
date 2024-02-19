@@ -16,7 +16,7 @@ class DioApiServiceImpl extends ApiService {
   final Dio _dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
 
   @override
-  Future<Either<ApiErrorModel, ApiSuccessModel>> get(
+  Future<Either<ApiFaliureModel, ApiSuccessModel>> get(
     String path, {
     Map<String, dynamic> queryParameters = const {},
   }) async {
@@ -33,7 +33,7 @@ class DioApiServiceImpl extends ApiService {
         data: response.data,
       ));
     } on DioException catch (error) {
-      return Left(ApiErrorModel.fromJson(error.response!.data));
+      return Left(ApiFaliureModel.fromJson(error.response!.data));
     }
   }
 }

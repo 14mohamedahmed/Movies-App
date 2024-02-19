@@ -3,13 +3,13 @@ import 'package:movies_app/core/network/exception/server_exception.dart';
 import 'package:movies_app/core/network/network_provider/api_services.dart';
 import 'package:movies_app/features/movies/data/models/movie_model.dart';
 
-abstract class MovieRemoteDatasource {
+abstract class MoviesRemoteDatasource {
   Future<List<MovieModel>> getPopularMovies();
 }
 
-class MovieRemoteDatasourceImpl extends MovieRemoteDatasource {
+class MoviesRemoteDatasourceImpl extends MoviesRemoteDatasource {
   final ApiService _apiService;
-  MovieRemoteDatasourceImpl(this._apiService);
+  MoviesRemoteDatasourceImpl(this._apiService);
 
   @override
   Future<List<MovieModel>> getPopularMovies() async {
