@@ -15,8 +15,7 @@ class PopularMoviesScreen extends StatelessWidget {
           getIt<PopularMoviesBloc>()..add(GetPopularMoviesEvent()),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Movies"),
-          centerTitle: true,
+          title: const Text("Popular Movies"),
           elevation: 1,
         ),
         body: BlocBuilder<PopularMoviesBloc, PopularMoviesState>(
