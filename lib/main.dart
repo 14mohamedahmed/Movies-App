@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/core/services_locator/services_locator.dart';
 
 void main() {
+  setupSingeltonServices();
   runApp(const MyApp());
 }
 

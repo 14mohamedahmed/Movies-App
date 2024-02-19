@@ -5,9 +5,9 @@ import 'package:movies_app/features/movies/data/datasource/movies_remote_datasou
 import 'package:movies_app/features/movies/data/models/movie_model.dart';
 import 'package:movies_app/features/movies/domain/repository/movies_repository.dart';
 
-class MovieRepositoryImpl extends MoviesRepository {
+class MoviesRepositoryImpl extends MoviesRepository {
   final MoviesRemoteDatasource _moviesRemoteDataSource;
-  MovieRepositoryImpl(this._moviesRemoteDataSource);
+  MoviesRepositoryImpl(this._moviesRemoteDataSource);
 
   @override
   Future<Either<ApiFaliureModel, List<MovieModel>>> popularMovies() async {
