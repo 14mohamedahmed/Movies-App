@@ -5,12 +5,16 @@ import 'package:movies_app/features/movies/data/datasource/movies_remote_datasou
 import 'package:movies_app/features/movies/data/repository/movies_repository_impl.dart';
 import 'package:movies_app/features/movies/domain/repository/movies_repository.dart';
 import 'package:movies_app/features/movies/domain/usecases/get_popular_movies_usecase.dart';
+import 'package:movies_app/features/movies/presentation/controller/popular_movies_bloc.dart';
 
 GetIt getIt = GetIt.instance;
 
 void setupSingeltonServices() {
-  // Injet Network Handler
+  // Inject Network Handler
   getIt.registerLazySingleton<ApiService>(() => DioApiServiceImpl());
+
+  // Inject bloc
+  getIt.registerFactory(() => PopularMoviesBloc(getIt()));
 
   // Inject Datasouce
   getIt.registerLazySingleton<MoviesRemoteDatasource>(
