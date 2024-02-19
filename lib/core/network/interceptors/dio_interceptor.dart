@@ -1,4 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:movies_app/components/packages/message_handlers.dart';
 import 'package:movies_app/core/network/api_constants.dart';
 
 class DioInterceptor extends Interceptor {
@@ -19,6 +22,7 @@ class DioInterceptor extends Interceptor {
       return;
     }
     // if request not success, we can handle the global messages for all requests here or re-throw the error for specifc handling
+    // also we can refresh token and re-call the same request after token updated.
     late String message;
     switch (response.statusCode) {
       case 401:
@@ -41,6 +45,12 @@ class DioInterceptor extends Interceptor {
         message = "An unknown error occurred";
         break;
     }
+    ShowToastMessages.showMessage(
+      message,
+      backgroundColor: Colors.orangeAccent,
+      textColor: Colors.black,
+      toastLength: Toast.LENGTH_LONG,
+    );
     handler.reject(DioException(
       requestOptions: response.requestOptions,
       response: response,
@@ -81,6 +91,12 @@ class DioInterceptor extends Interceptor {
       default:
         message = "An error occurred. Please try again later.";
     }
+    ShowToastMessages.showMessage(
+      message,
+      backgroundColor: Colors.red,
+      textColor: Colors.white,
+      toastLength: Toast.LENGTH_LONG,
+    );
     handler.reject(err);
   }
 }
