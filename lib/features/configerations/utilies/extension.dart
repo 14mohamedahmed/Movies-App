@@ -3,7 +3,7 @@ import 'package:movies_app/features/configerations/domain/enitiies/image_configs
 extension ImageConfigsExtension on ImageConfigs {
   /// be default return first size from the list
   String? getBaseUrlWithBackdropSize([int index = 0]) {
-    if (backdropSizes.contains(backdropSizes[index])) {
+    if (backdropSizes.length > index) {
       final firstBackdropSize = backdropSizes[index];
       return '$baseUrl/$firstBackdropSize';
     }
@@ -12,7 +12,7 @@ extension ImageConfigsExtension on ImageConfigs {
 
   /// be default return first size from the list
   String? getBaseUrlWithPostersSize([int index = 0]) {
-    if (posterSizes.contains(posterSizes[index])) {
+    if (posterSizes.length > index) {
       final firstPosterSize = posterSizes[index];
       return '$baseUrl/$firstPosterSize';
     }
