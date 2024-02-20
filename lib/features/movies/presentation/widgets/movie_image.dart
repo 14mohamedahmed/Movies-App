@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/utilies/extensions.dart';
 import 'package:movies_app/features/configerations/domain/enitiies/image_configs.dart';
+import 'package:movies_app/features/configerations/utilies/extension.dart';
 import 'package:movies_app/features/movies/domain/entities/movie.dart';
 
 class MovieImage extends StatelessWidget {
@@ -17,8 +17,8 @@ class MovieImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl:
-          (imageConfigs?.getBaseUrlWithPostersSize(4) ?? "") + movie.posterPath,
+      imageUrl: (imageConfigs?.getBaseUrlWithBackdropSize(4) ?? "") +
+          movie.posterPath,
       placeholder: (context, url) => Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: const Center(child: CircularProgressIndicator()),
