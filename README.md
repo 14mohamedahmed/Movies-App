@@ -1,16 +1,47 @@
-# movies_app
+# Movies App
 
-A new Flutter project.
+A new flutter app for TMDB movies, We are using thier APIs to showing the most popular movies.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+-> What we are using:-
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  1- Clean Architecture
+  
+  2- Bloc pattern as state management to handle app data and states
+  
+  3- get_it package to inject all services inside it as singelton instance
+  
+  4- dio package to handle HTTP requests to server
+  
+-> Folder strucutre 
+  
+  ```
+    - root
+      - Core
+        - network
+        - utilies
+      - features
+        - configurations
+          - data
+            - datasource
+            - models
+            - repository
+          - domain
+            - entities
+            - repository
+            - usecases
+        - movies
+          - data
+            - datasource
+            - models
+            - repository
+          - domain
+            - entities
+            - repository
+            - usecases
+          - presentations
+            - controller
+            - screens
+            - widgets
+  ```
