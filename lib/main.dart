@@ -13,11 +13,13 @@ class MoviesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Movies App',
+      title: 'TMDB Movies',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      // We are have only one screen, so we are using home widget insted of
+      // using generate route or navigator 2 with go_router pacakage
       home: const PopularMoviesScreen(),
     );
   }
