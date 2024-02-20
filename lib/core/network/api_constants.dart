@@ -1,8 +1,8 @@
 class ApiConstants {
   static const String baseUrl = "https://api.themoviedb.org/3";
   static const String apiKey = "3d690be0756735e4b1f59b5e0a1ec12f";
-  static const String authToken =
-      "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZDY5MGJlMDc1NjczNWU0YjFmNTliNWUwYTFlYzEyZiIsInN1YiI6IjYzZjllZmYzMjVhNTM2MDA4NzRjZTBlYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zkQ2E6ImGOywxOCzETC9d2xzAshz_v6p-o1ZxDKqid4";
+  // TODO please add your access token here to access the API, You can follow the readme file to know how generate token.
+  static const String authToken = "YOUR-ACCESS-TOKEN-HERE";
   static const String popularMovies = "/movie/popular";
   static const String configuration = "/configuration";
 }
